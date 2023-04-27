@@ -1,5 +1,5 @@
 name: Python Pull Request Workflow
-on: [push]
+on: [pull_request]
 jobs:
 
   qa:
@@ -19,6 +19,8 @@ jobs:
         env:
           POETRY_VIRTUALENVS_CREATE: false
 
+      - name: View poetry --help
+        run: poetry --help
 
       - name: Install dependencies
         shell: bash
